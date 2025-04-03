@@ -2,9 +2,9 @@ import { findProductById } from "@/db/db";
 import { Metadata } from "next";
 
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
-  const { id } = params;
+  const { id } = await params;
 
   const product = await findProductById(Number(id));
 
@@ -27,7 +27,7 @@ export async function generateMetadata({
 }
 
 const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
-  const { id } = params;
+  const { id } = await params;
 
   // Mock API call to fetch product data
   const product = await findProductById(Number(id));
