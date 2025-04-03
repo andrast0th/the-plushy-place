@@ -2,7 +2,7 @@ import { getProducts } from "@/db/db";
 import { NextRequest, NextResponse } from "next/server";
 
 // To handle a GET request to /api/products
-export async function GET(request: NextRequest): Promise<NextResponse> {
+export async function GET(_request: NextRequest): Promise<NextResponse> {
   try {
     const products = await getProducts();
     return NextResponse.json(products, { status: 200 });

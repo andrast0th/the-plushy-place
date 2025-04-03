@@ -5,7 +5,7 @@ export default function NotFound() {
     <div className="text-center p-12 bg-pink-100 min-h-screen flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold text-pink-600">404 - Page Not Found</h1>
       <p className="text-pink-500 mt-4">
-        Oh no! We couldn't find your plushy friend.
+        Oh no! We couldn&apos;t find your plushy friend.
       </p>
       <Link
         href="/"

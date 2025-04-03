@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Header: React.FC = () => {
@@ -7,10 +8,10 @@ const Header: React.FC = () => {
             <nav>
                 <ul className="flex space-x-4">
                     <li>
-                        <a href="/products" className="hover:underline">Products</a>
+                        <Link href="/products" className="hover:underline">Products</a>
                     </li>
                     <li>
-                        <a href="/about" className="hover:underline">About</a>
+                        <Link href="/about" className="hover:underline">About</a>
                     </li>
                 </ul>
             </nav>
